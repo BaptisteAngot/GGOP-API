@@ -75,6 +75,7 @@ class RiotServerController extends AbstractController
             $id = $datas['id'];
             $riotServer = $riotServerRepository->find($id);
             if ($riotServer) {
+                //TODO verification violation pour les uniques don't work
                 $violations = $validator->validate($riotServer);
                 if (0 !== count($violations)) {
                     foreach ($violations as $error) {
