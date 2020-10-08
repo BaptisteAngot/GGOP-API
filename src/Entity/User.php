@@ -42,10 +42,6 @@ class User implements UserInterface
      */
     private $pseudo;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $is_banned;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -163,18 +159,6 @@ class User implements UserInterface
     public function setPseudo(string $pseudo): self
     {
         $this->pseudo = $pseudo;
-
-        return $this;
-    }
-
-    public function getIsBanned(): ?bool
-    {
-        return $this->is_banned;
-    }
-
-    public function setIsBanned(bool $is_banned): self
-    {
-        $this->is_banned = $is_banned;
 
         return $this;
     }
