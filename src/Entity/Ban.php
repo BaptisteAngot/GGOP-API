@@ -33,6 +33,11 @@ class Ban
      */
     private $end;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $motive;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class Ban
     public function setEnd(\DateTimeInterface $end): self
     {
         $this->end = $end;
+
+        return $this;
+    }
+
+    public function getMotive(): ?string
+    {
+        return $this->motive;
+    }
+
+    public function setMotive(string $motive): self
+    {
+        $this->motive = $motive;
 
         return $this;
     }

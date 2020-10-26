@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d85171c-f447-4447-a63e-fff7f53644bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RiotServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RiotServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Ban.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ban.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/RiotServer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RiotServer.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -137,6 +141,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -150,7 +155,12 @@
       <updated>1602143580440</updated>
       <workItem from="1602143581570" duration="3461000" />
       <workItem from="1602148361605" duration="3113000" />
-      <workItem from="1602152274456" duration="9756000" />
+      <workItem from="1602152274456" duration="12458000" />
+      <workItem from="1602227780467" duration="1670000" />
+      <workItem from="1602231483812" duration="8771000" />
+      <workItem from="1602241749736" duration="81000" />
+      <workItem from="1603704220214" duration="353000" />
+      <workItem from="1603720102510" duration="3447000" />
     </task>
     <servers />
   </component>
@@ -158,26 +168,31 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602147006604">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603722129546">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602147006604" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603722129546" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1602144109817">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602144109817" />
-    <state x="462" y="87" key="NewPhpClassDialog" timestamp="1602156632836">
+    <state x="462" y="87" key="NewPhpClassDialog" timestamp="1602231946199">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="87" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602156632836" />
+    <state x="462" y="87" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602231946199" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1602148321212">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602148321212" />
-    <state x="1844" y="-164" width="596" height="534" key="find.popup" timestamp="1602163842309">
-      <screen x="1366" y="-309" width="1536" height="832" />
+    <state x="425" y="127" width="563" height="534" key="find.popup" timestamp="1602166800110">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="425" y="127" width="563" height="534" key="find.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602166800110" />
     <state x="1844" y="-164" width="596" height="534" key="find.popup/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1602163842309" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1602234780086">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602234780086" />
     <state x="1755" y="-253" width="756" height="775" key="search.everywhere.popup" timestamp="1602162895776">
       <screen x="1366" y="-309" width="1536" height="832" />
     </state>
