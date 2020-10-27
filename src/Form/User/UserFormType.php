@@ -1,28 +1,29 @@
 <?php
 
-namespace App\Form\BanFormType;
+namespace App\Form\User;
 
-use App\Entity\Ban;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class BanFormType extends AbstractType
+class UserFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('start')
-            ->add('end')
-            ->add('motive')
-            ->add('user_id')
+            ->add('email')
+            ->add('password', PasswordType::class)
+            ->add('pseudo')
+            ->add('riot_pseudo')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Ban::class,
+            'data_class' => User::class,
         ]);
     }
 }

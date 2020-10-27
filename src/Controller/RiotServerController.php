@@ -2,10 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Departements;
 use App\Entity\RiotServer;
-use App\Form\RiotServerFormType;
-use App\Form\RiotServerUpdateFormType;
+use App\Form\RiotServerForm2Type;
 use App\Repository\RiotServerRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
@@ -47,7 +45,7 @@ class RiotServerController extends AbstractController
     public function createServer(Request $request,ValidatorInterface $validator) {
         $riotServer = new RiotServer();
         $datas = json_decode($request->getContent(),true);
-        $form = $this->createForm(RiotServerFormType::class,$riotServer);
+        $form = $this->createForm(RiotServerForm2Type::class,$riotServer);
         $form->submit($datas);
 
         //Validation des champs
@@ -67,13 +65,15 @@ class RiotServerController extends AbstractController
     /**
      * @Route("admin/riotServer/{id}", name="updateRiotServer", methods={"PATCH"})
      * @ParamConverter("server", options={"id"="id"})
+     * @param RiotServer $server
      * @param Request $request
      * @param ValidatorInterface $validator
+     * @param EntityManagerInterface $entityManager
      * @return JsonResponse
      */
     public function updateServer(RiotServer $server,Request $request,ValidatorInterface $validator,EntityManagerInterface $entityManager) {
         $datas = json_decode($request->getContent(),true);
-        $form = $this->createForm(RiotServerFormType::class,$server);
+        $form = $this->createForm(RiotServerForm2Type::class,$server);
         $form->submit($datas);
         $violations = $validator->validate($server);
         if (0 !== count($violations)) {
@@ -83,44 +83,6 @@ class RiotServerController extends AbstractController
         }
         $entityManager->flush();
         return JsonResponse::fromJsonString("",Response::HTTP_OK);
-
-//        $this->verification($riotServerRepository, $datas);
-//        $riotVerif = $riotServerRepository->findOneBy(array('name' => $datas['name']));
-//        $riotVerif2 = $riotServerRepository->findOneBy(array('api_route' => $datas['api_route']));
-//        $response = new JsonResponse();
-//        if (!$riotVerif && !$riotVerif2) {
-//            $riotServer = $riotServerRepository->find($id);
-//            $riotServer->setName($datas['name'])
-//                ->setApiRoute($datas['api_route']);
-//            $entityManager = $this->getDoctrine()->getManager();
-//            $entityManager->persist($riotServer);
-//            $entityManager->flush();
-//            $response->setStatusCode(Response::HTTP_OK);
-//        }else {
-//            $response->setStatusCode(Response::HTTP_BAD_REQUEST);
-//        }
-//        return $response;
-    }
-
-    private function verification(RiotServerRepository $riotServerRepository, $objet) {
-        $filters = [];
-        $error = [];
-        $em = $this->getDoctrine()->getManager();
-        $metaData = $em->getClassMetadata(RiotServer::class)->getFieldNames();
-        foreach ($objet as $value) {
-            foreach ($metaData as $metaDatum) {
-                if ($value === $metaDatum)
-                    $filters[$value] = $objet[$value];
-            }
-        }
-//        foreach ($metaData as $value) {
-//            if ($objet[$value]) {
-//                $filters[$value] = $objet[$value];
-//            }
-//        }
-//        foreach ($filters as $filter) {
-//
-//        }
     }
 
     /**

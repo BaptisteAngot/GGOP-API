@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\BanRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=BanRepository::class)
@@ -19,22 +20,25 @@ class Ban
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="bans")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $user_id;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Assert\NotBlank(message="start cannot be empty")
      */
     private $start;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\NotBlank(message="end cannot be empty")
      */
     private $end;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="motive cannot be empty")
      */
     private $motive;
 
@@ -72,7 +76,7 @@ class Ban
         return $this->end;
     }
 
-    public function setEnd(\DateTimeInterface $end): self
+    public function setEnd(?\DateTimeInterface $end): self
     {
         $this->end = $end;
 
@@ -84,7 +88,7 @@ class Ban
         return $this->motive;
     }
 
-    public function setMotive(string $motive): self
+    public function setMotive(?string $motive): self
     {
         $this->motive = $motive;
 

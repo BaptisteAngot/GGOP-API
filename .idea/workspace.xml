@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d85171c-f447-4447-a63e-fff7f53644bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GGOP_API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GGOP_API.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BanController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RiotServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RiotServerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Ban.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ban.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/RiotServer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RiotServer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BanFormType/BanFormType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RiotServerFormType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +102,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
@@ -130,6 +141,27 @@
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
       <path value="$PROJECT_DIR$/vendor/jms/serializer" />
       <path value="$PROJECT_DIR$/vendor/jms/serializer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu" />
+      <path value="$PROJECT_DIR$/vendor/twig/string-extra" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-acl" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/form-extensions" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/twig-extensions" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/block-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/cache" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/admin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sonata-project/doctrine-mongodb-admin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/mongodb/mongodb" />
+      <path value="$PROJECT_DIR$/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/mongodb-odm-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iaRBXVR0RIkzdVmSBpTKDi49bX" />
@@ -144,6 +176,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bat76\ProjetCours\GGOP_API\src\Form\User" />
+      <recent name="D:\bat76\ProjetCours\GGOP_API\src\Form\BanFormType" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -160,7 +198,10 @@
       <workItem from="1602231483812" duration="8771000" />
       <workItem from="1602241749736" duration="81000" />
       <workItem from="1603704220214" duration="353000" />
-      <workItem from="1603720102510" duration="3447000" />
+      <workItem from="1603720102510" duration="7626000" />
+      <workItem from="1603728402815" duration="3879000" />
+      <workItem from="1603786313532" duration="11890000" />
+      <workItem from="1603803861007" duration="5123000" />
     </task>
     <servers />
   </component>
@@ -168,35 +209,45 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603722129546">
+    <state x="340" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603726428928">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603722129546" />
+    <state x="340" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603726428928" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603789672714">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603789672714" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1602144109817">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602144109817" />
-    <state x="462" y="87" key="NewPhpClassDialog" timestamp="1602231946199">
+    <state x="894" y="133" key="NewPhpClassDialog" timestamp="1603803346093">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="87" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602231946199" />
+    <state x="894" y="133" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603803346093" />
+    <state x="1885" y="-210" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1603794069830" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1603803336442">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603803336442" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1602148321212">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602148321212" />
-    <state x="425" y="127" width="563" height="534" key="find.popup" timestamp="1602166800110">
+    <state x="425" y="127" width="563" height="534" key="find.popup" timestamp="1603725037318">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="425" y="127" width="563" height="534" key="find.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602166800110" />
+    <state x="425" y="127" width="563" height="534" key="find.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603725037318" />
     <state x="1844" y="-164" width="596" height="534" key="find.popup/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1602163842309" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1602234780086">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602234780086" />
-    <state x="1755" y="-253" width="756" height="775" key="search.everywhere.popup" timestamp="1602162895776">
+    <state x="1747" y="-124" key="run.anything.popup" timestamp="1603794081637">
       <screen x="1366" y="-309" width="1536" height="832" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602159154637" />
+    <state x="339" y="162" key="run.anything.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602234780086" />
+    <state x="1747" y="-124" key="run.anything.popup/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1603794081637" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603726491221">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603726491221" />
     <state x="1755" y="-253" width="756" height="775" key="search.everywhere.popup/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1602162895776" />
   </component>
 </project>

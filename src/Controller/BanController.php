@@ -3,9 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Ban;
+use App\Form\BanFormType\BanFormType;
 use App\Repository\BanRepository;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerInterface;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,15 +20,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class BanController extends AbstractController
 {
-    /**
-     * @Route("/ban", name="ban")
-     */
-    public function index()
-    {
-        return $this->render('ban/index.html.twig', [
-            'controller_name' => 'BanController',
-        ]);
-    }
 
     /**
      * @Route("ban", name="ban",methods={"GET"})
@@ -76,12 +68,54 @@ class BanController extends AbstractController
         return $response;
     }
 
-//    public function createBan(Request $request, ValidatorInterface $validator) {
-//        $ban = new Ban();
-//        $datas = json_decode($request->getContent(),true);
-//        $form = $this->createForm()
-//    }
 
+
+    /**
+     * @Route("admin/ban", name="createBan", methods={"POST"})
+     * @param Request $request
+     * @param ValidatorInterface $validator
+     * @return JsonResponse
+     */
+    public function createBan(Request $request, ValidatorInterface $validator) {
+        $ban = new Ban();
+        $datas = json_decode($request->getContent(),true);
+        $form = $this->createForm(BanFormType::class,$ban);
+        $form->submit($datas);
+
+        $violations = $validator->validate($ban);
+        if (0 !== count($violations)) {
+            foreach ($violations as $error) {
+                return JsonResponse::fromJsonString($error->getMessage(),Response::HTTP_BAD_REQUEST);
+            }
+        }
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($ban);
+        $entityManager->flush();
+        return JsonResponse::fromJsonString("Ban created at id: " . $ban->getId(),Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("admin/ban/{id}", name="updateBan", methods={"PATCH"})
+     * @ParamConverter("ban", options={"id"="id"})
+     * @param Ban $ban
+     * @param Request $request
+     * @param EntityManagerInterface $entityManager
+     * @param ValidatorInterface $validator
+     * @return JsonResponse
+     */
+    public function updateBan(Ban $ban, Request $request, EntityManagerInterface $entityManager, ValidatorInterface $validator) {
+        $datas = json_decode($request->getContent(),true);
+        $form = $this->createForm(BanRepository::class,$ban);
+        $form->submit($datas);
+        $violations = $validator->validate($ban);
+        if (0 !== count($violations)) {
+            foreach ($violations as $error) {
+                return JsonResponse::fromJsonString($error->getMessage(),Response::HTTP_BAD_REQUEST);
+            }
+        }
+        $entityManager->flush();
+        return JsonResponse::fromJsonString("",Response::HTTP_OK);
+    }
 
     private function serializeBan($objet) {
         $defaultContext = [
