@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d85171c-f447-4447-a63e-fff7f53644bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GGOP_API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GGOP_API.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RiotServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RiotServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Ban.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ban.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/RiotServer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/RiotServer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/BanFormType/BanFormType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RiotServerFormType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +185,7 @@
       <workItem from="1603720102510" duration="7626000" />
       <workItem from="1603728402815" duration="3879000" />
       <workItem from="1603786313532" duration="11890000" />
-      <workItem from="1603803861007" duration="5123000" />
+      <workItem from="1603803861007" duration="5779000" />
     </task>
     <servers />
   </component>
@@ -213,18 +197,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="340" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603726428928" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603789672714">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603809288027">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603789672714" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603809288027" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1602144109817">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602144109817" />
-    <state x="894" y="133" key="NewPhpClassDialog" timestamp="1603803346093">
+    <state x="894" y="133" key="NewPhpClassDialog" timestamp="1603809270694">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="894" y="133" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603803346093" />
+    <state x="894" y="133" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603809270694" />
     <state x="1885" y="-210" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1603794069830" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1603803336442">
       <screen x="0" y="0" width="1366" height="728" />
