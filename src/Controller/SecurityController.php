@@ -31,7 +31,12 @@ class SecurityController extends AbstractController
             if ($user) {
                 if ($encoder->isPasswordValid($user,$datas['password'])){
                     if ($this->checkBans($user->getBans())) {
-                        $response->setContent(json_encode(['token' => $JWTTokenManager->create($user)]));
+                        $responseContent = [
+                          'token' => $JWTTokenManager->create($user),
+                          'roles' => $user->getRoles(),
+                          'username' => $user->getUsername()
+                        ];
+                        $response->setContent(json_encode($responseContent));
                         $response->setStatusCode(Response::HTTP_OK);
                     }else {
                         $response->setContent("User is banned");
