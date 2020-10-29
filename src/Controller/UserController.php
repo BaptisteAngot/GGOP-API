@@ -47,32 +47,29 @@ class UserController extends AbstractController
         return JsonResponse::fromJsonString("User created at id: " . $user->getId(),Response::HTTP_OK);
     }
 
-//    /**
-//     * @Route("admin/user", name="getUser",methods={"GET"})
-//     * @param UserRepository $userRepository
-//     * @param Request $request
-//     * @return JsonResponse
-//     */
-//    public function getUser(UserRepository $userRepository,Request $request) {
-//        $filter = [];
-//        $em = $this->getDoctrine()->getManager();
-//        $metaData = $em->getClassMetadata(User::class)->getFieldNames();
-//        foreach ($metaData as $value) {
-//            if ($request->query->get($value)) {
-//                $filter[$value] = $request->query->get($value);
-//            }
-//        }
-//        return JsonResponse::fromJsonString($this->serializeUser($userRepository->findBy($filter)));
-//    }
+    /**
+     * @Route("admin/user", name="getAllUser", methods={"GET"})
+     * @param UserRepository $userRepository
+     * @return JsonResponse
+     */
+    public function getAllUsers(UserRepository $userRepository) {
+        $users = $userRepository->findAll();
+        $jsonContent = $this->serializeUser($users);
+        $response = JsonResponse::fromJsonString($jsonContent);
+        $response->setStatusCode(Response::HTTP_OK);
+        return $response;
+    }
 
-    private function serializeUser($objet) {
+    public function serializeUser($objet) {
         $defaultContext = [
             AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object, $format, $context) {
-                return $object->getemail();
+                return $object->getId();
             },
         ];
         $normalizer = new ObjectNormalizer(null, null, null, null, null, null, $defaultContext);
         $serializer = new Serializer([$normalizer], [new JsonEncoder()]);
+
         return $serializer->serialize($objet, 'json');
     }
+
 }

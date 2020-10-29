@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d85171c-f447-4447-a63e-fff7f53644bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GGOP_API.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GGOP_API.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +156,11 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" />
       <path value="$PROJECT_DIR$/vendor/doctrine/mongodb-odm-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iaRBXVR0RIkzdVmSBpTKDi49bX" />
@@ -156,7 +171,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/laragon/www/test" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -185,7 +200,11 @@
       <workItem from="1603720102510" duration="7626000" />
       <workItem from="1603728402815" duration="3879000" />
       <workItem from="1603786313532" duration="11890000" />
-      <workItem from="1603803861007" duration="5779000" />
+      <workItem from="1603803861007" duration="10303000" />
+      <workItem from="1603820426352" duration="78000" />
+      <workItem from="1603889175045" duration="18000" />
+      <workItem from="1603889204946" duration="16758000" />
+      <workItem from="1603958936748" duration="927000" />
     </task>
     <servers />
   </component>
@@ -201,14 +220,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603809288027" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1602144109817">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1603820503275">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602144109817" />
-    <state x="894" y="133" key="NewPhpClassDialog" timestamp="1603809270694">
+    <state x="463" y="119" key="FileChooserDialogImpl/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603820503275" />
+    <state x="894" y="133" key="NewPhpClassDialog" timestamp="1603892000689">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="894" y="133" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603809270694" />
+    <state x="894" y="133" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603892000689" />
     <state x="1885" y="-210" key="NewPhpClassDialog/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1603794069830" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1603803336442">
       <screen x="0" y="0" width="1366" height="728" />
@@ -223,15 +242,19 @@
     </state>
     <state x="425" y="127" width="563" height="534" key="find.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603725037318" />
     <state x="1844" y="-164" width="596" height="534" key="find.popup/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1602163842309" />
+    <state x="400" y="135" key="refactoring.ChangeSignatureDialog" timestamp="1603900345810">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="400" y="135" key="refactoring.ChangeSignatureDialog/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603900345810" />
     <state x="1747" y="-124" key="run.anything.popup" timestamp="1603794081637">
       <screen x="1366" y="-309" width="1536" height="832" />
     </state>
     <state x="339" y="162" key="run.anything.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1602234780086" />
     <state x="1747" y="-124" key="run.anything.popup/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1603794081637" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603726491221">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603892045599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603726491221" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/1366.-309.1536.832/0.0.1366.728@0.0.1366.728" timestamp="1603892045599" />
     <state x="1755" y="-253" width="756" height="775" key="search.everywhere.popup/1366.-309.1536.832/0.0.1366.728@1366.-309.1536.832" timestamp="1602162895776" />
   </component>
 </project>

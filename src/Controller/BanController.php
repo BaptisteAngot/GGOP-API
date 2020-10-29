@@ -120,7 +120,7 @@ class BanController extends AbstractController
     private function serializeBan($objet) {
         $defaultContext = [
             AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object, $format, $context) {
-                return $object->getName();
+                return $object->getId();
             },
         ];
         $normalizer = new ObjectNormalizer(null, null, null, null, null, null, $defaultContext);
