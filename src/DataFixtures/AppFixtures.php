@@ -36,6 +36,19 @@ class AppFixtures extends Fixture
             ->setUserId($user);
         $manager->persist($ban);
 
+        $user2 = new User();
+        $user2
+            ->setPseudo("admin")
+            ->setEmail("admin@admin.com")
+            ->setRiotPseudo("admin")
+            ->setPassword($this->passwordEncoder->encodePassword(
+                $user2,
+                'admin'
+            ))
+            ->setRoles(['ROLE_ADMIN']);
+        $manager->persist($user2);
+
         $manager->flush();
+
     }
 }
