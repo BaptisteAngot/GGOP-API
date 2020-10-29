@@ -14,7 +14,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/api/login", name="api_login", methods={"POST"})
+     * @Route("/login", name="api_login", methods={"POST"})
      * @param UserRepository $userRepository
      * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
@@ -31,7 +31,12 @@ class SecurityController extends AbstractController
             if ($user) {
                 if ($encoder->isPasswordValid($user,$datas['password'])){
                     if ($this->checkBans($user->getBans())) {
-                        $response->setContent(json_encode(['token' => $JWTTokenManager->create($user)]));
+                        $responseContent = [
+                          'token' => $JWTTokenManager->create($user),
+                          'roles' => $user->getRoles(),
+                          'username' => $user->getUsername()
+                        ];
+                        $response->setContent(json_encode($responseContent));
                         $response->setStatusCode(Response::HTTP_OK);
                     }else {
                         $response->setContent("User is banned");

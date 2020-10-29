@@ -37,7 +37,7 @@ class RiotServerController extends AbstractController
     }
 
     /**
-     * @Route("admin/riotServer", name="createRiotServer", methods={"POST"})
+     * @Route("api/admin/riotServer", name="createRiotServer", methods={"POST"})
      * @param Request $request
      * @param ValidatorInterface $validator
      * @return JsonResponse
@@ -63,7 +63,7 @@ class RiotServerController extends AbstractController
     }
 
     /**
-     * @Route("admin/riotServer/{id}", name="updateRiotServer", methods={"PATCH"})
+     * @Route("api/admin/riotServer/{id}", name="updateRiotServer", methods={"PATCH"})
      * @ParamConverter("server", options={"id"="id"})
      * @param RiotServer $server
      * @param Request $request
@@ -86,7 +86,7 @@ class RiotServerController extends AbstractController
     }
 
     /**
-     * @Route("admin/riotServer", name="DeleteRiotServer", methods={"DELETE"})
+     * @Route("api/admin/riotServer", name="DeleteRiotServer", methods={"DELETE"})
      * @param Request $request
      * @param RiotServerRepository $riotServerRepository
      * @return JsonResponse
