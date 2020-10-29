@@ -62,7 +62,7 @@ class RiotServer
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(?string $name): self
     {
         $this->name = $name;
 
@@ -74,7 +74,7 @@ class RiotServer
         return $this->api_route;
     }
 
-    public function setApiRoute(string $api_route): self
+    public function setApiRoute(?string $api_route): self
     {
         $this->api_route = $api_route;
 

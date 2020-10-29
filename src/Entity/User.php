@@ -7,10 +7,16 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(
+ *     fields={"email","pseudo"},
+ *     message="Email or pseudo already exist"
+ * )
  */
 class User implements UserInterface
 {
@@ -23,6 +29,8 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="Email cannot be empty")
+     * @Assert\Email(message="The email '{{ value }}' is not a valid email.")
      */
     private $email;
 
@@ -38,14 +46,18 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank(message="Pseudo cannot be empty")
+     * @Assert\Length(
+     *     min="2",
+     *     max="22",
+     *     minMessage="Your pseudonyme must be at least {{ limit }} characters long",
+     *     maxMessage = "Your pseudonyme cannot be longer than {{ limit }} characters",
+     *     allowEmptyString = false
+     * )
      */
     private $pseudo;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $is_banned;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -53,12 +65,12 @@ class User implements UserInterface
     private $riot_pseudo;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $riot_account_id;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default" : false }, nullable=true)
      */
     private $is_riot_validated;
 
@@ -68,7 +80,7 @@ class User implements UserInterface
     private $riot_server_id;
 
     /**
-     * @ORM\OneToMany(targetEntity=Ban::class, mappedBy="user_id", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Ban::class, mappedBy="user_id")
      */
     private $bans;
 
@@ -163,18 +175,6 @@ class User implements UserInterface
     public function setPseudo(string $pseudo): self
     {
         $this->pseudo = $pseudo;
-
-        return $this;
-    }
-
-    public function getIsBanned(): ?bool
-    {
-        return $this->is_banned;
-    }
-
-    public function setIsBanned(bool $is_banned): self
-    {
-        $this->is_banned = $is_banned;
 
         return $this;
     }

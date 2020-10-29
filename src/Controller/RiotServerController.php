@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\RiotServer;
-use App\Form\RiotServerFormType;
+use App\Form\RiotServerForm2Type;
 use App\Repository\RiotServerRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use JMS\Serializer\SerializerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,7 +45,7 @@ class RiotServerController extends AbstractController
     public function createServer(Request $request,ValidatorInterface $validator) {
         $riotServer = new RiotServer();
         $datas = json_decode($request->getContent(),true);
-        $form = $this->createForm(RiotServerFormType::class,$riotServer);
+        $form = $this->createForm(RiotServerForm2Type::class,$riotServer);
         $form->submit($datas);
 
         //Validation des champs
@@ -61,43 +63,26 @@ class RiotServerController extends AbstractController
     }
 
     /**
-     * @Route("admin/riotServer", name="updateRiotServer", methods={"PATCH"})
+     * @Route("admin/riotServer/{id}", name="updateRiotServer", methods={"PATCH"})
+     * @ParamConverter("server", options={"id"="id"})
+     * @param RiotServer $server
      * @param Request $request
      * @param ValidatorInterface $validator
-     * @param RiotServerRepository $riotServerRepository
+     * @param EntityManagerInterface $entityManager
      * @return JsonResponse
      */
-    public function updateServer(Request $request, ValidatorInterface $validator,RiotServerRepository $riotServerRepository) {
-        $entityManager = $this->getDoctrine()->getManager();
+    public function updateServer(RiotServer $server,Request $request,ValidatorInterface $validator,EntityManagerInterface $entityManager) {
         $datas = json_decode($request->getContent(),true);
-        $response = new JsonResponse();
-        if (isset($datas['name']) && isset($datas['apiRoute']) && isset($datas['id'])) {
-            $id = $datas['id'];
-            $riotServer = $riotServerRepository->find($id);
-            if ($riotServer) {
-                //TODO verification violation pour les uniques don't work
-                $violations = $validator->validate($riotServer);
-                if (0 !== count($violations)) {
-                    foreach ($violations as $error) {
-                        return JsonResponse::fromJsonString($error->getMessage(),Response::HTTP_BAD_REQUEST);
-                    }
-                } else {
-                    $riotServer->setName($datas['name'])
-                        ->setApiRoute($datas['apiRoute']);
-                    $entityManager->persist($riotServer);
-                    $entityManager->flush();
-                    $response->setContent("Update successfull");
-                    $response->setStatusCode(Response::HTTP_OK);
-                }
-            }else{
-                $response->setContent("This Riot Server doesn't exist");
-                $response->setStatusCode(Response::HTTP_BAD_REQUEST);
+        $form = $this->createForm(RiotServerForm2Type::class,$server);
+        $form->submit($datas);
+        $violations = $validator->validate($server);
+        if (0 !== count($violations)) {
+            foreach ($violations as $error) {
+                return JsonResponse::fromJsonString($error->getMessage(),Response::HTTP_BAD_REQUEST);
             }
-        }else{
-            var_dump($datas);
-            $response->setStatusCode(Response::HTTP_BAD_REQUEST);
         }
-        return $response;
+        $entityManager->flush();
+        return JsonResponse::fromJsonString("",Response::HTTP_OK);
     }
 
     /**
