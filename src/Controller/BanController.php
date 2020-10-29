@@ -40,7 +40,7 @@ class BanController extends AbstractController
     }
 
     /**
-     * @Route("admin/ban", name="DeleteBan", methods={"DELETE"})
+     * @Route("api/admin/ban", name="DeleteBan", methods={"DELETE"})
      * @param Request $request
      * @param BanRepository $banRepository
      * @return JsonResponse
@@ -71,7 +71,7 @@ class BanController extends AbstractController
 
 
     /**
-     * @Route("admin/ban", name="createBan", methods={"POST"})
+     * @Route("api/admin/ban", name="createBan", methods={"POST"})
      * @param Request $request
      * @param ValidatorInterface $validator
      * @return JsonResponse
@@ -95,7 +95,7 @@ class BanController extends AbstractController
     }
 
     /**
-     * @Route("admin/ban/{id}", name="updateBan", methods={"PATCH"})
+     * @Route("api/admin/ban/{id}", name="updateBan", methods={"PATCH"})
      * @ParamConverter("ban", options={"id"="id"})
      * @param Ban $ban
      * @param Request $request

@@ -21,7 +21,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class UserController extends AbstractController
 {
     /**
-     * @Route("user", name="createUser", methods={"POST"})
+     * @Route("register", name="createUser", methods={"POST"})
      * @param Request $request
      * @param ValidatorInterface $validator
      * @param UserPasswordEncoderInterface $passwordEncoder
@@ -48,7 +48,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("admin/user", name="getAllUser", methods={"GET"})
+     * @Route("api/admin/user", name="getAllUser", methods={"GET"})
      * @param UserRepository $userRepository
      * @return JsonResponse
      */
