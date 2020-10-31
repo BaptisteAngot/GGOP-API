@@ -36,14 +36,19 @@ services:
         class: App\Admin\UserAdmin
         arguments: [ ~, App\Entity\User, ~ ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: User }
+            - { name: sonata.admin, manager_type: orm, label: User, group: 'MySQL' }
     admin.ban:
         class: App\Admin\BanAdmin
         arguments: [ ~, App\Entity\Ban, ~ ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Ban }
+            - { name: sonata.admin, manager_type: orm, label: Ban, group: 'MySQL' }
     admin.riotServer:
         class: App\Admin\RiotServerAdmin
         arguments: [ ~, App\Entity\RiotServer, ~ ]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: riotServer }
+            - { name: sonata.admin, manager_type: orm, label: RiotServer, group: 'MySQL' }
+    admin.report:
+        class: App\Admin\ReportAdmin
+        arguments: [ ~, App\Document\Report\Report, ~]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, label: Report, group: 'MongoDB' }
