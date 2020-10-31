@@ -22,7 +22,7 @@ class BanController extends AbstractController
 {
 
     /**
-     * @Route("ban", name="ban",methods={"GET"})
+     * @Route("api/ban", name="ban",methods={"GET"})
      * @param Request $request
      * @param BanRepository $banRepository
      * @return JsonResponse
