@@ -235,14 +235,18 @@ class User implements UserInterface
         return $this->bans;
     }
 
-    public function addBan(Ban $ban): self
+    public function addBan(Ban $ban): void
     {
-        if (!$this->bans->contains($ban)) {
-            $this->bans[] = $ban;
-            $ban->setUserId($this);
-        }
+        $ban->setUserId($this);
+        $this->bans->add($ban);
+    }
 
-        return $this;
+    public function setBans($bans) {
+        if (count($bans) > 0) {
+            foreach ($bans as $ban){
+                $this->addBan($ban);
+            }
+        }
     }
 
     public function removeBan(Ban $ban): self

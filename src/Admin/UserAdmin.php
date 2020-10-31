@@ -24,7 +24,8 @@ final class UserAdmin extends AbstractAdmin
             ->add('bans', ModelType::class, [
                 'class' => Ban::class,
                 'property' => 'motive',
-                'mapped' => false,
+                'multiple' => true,
+                'mapped' => true
             ])
         ;
     }
@@ -43,5 +44,15 @@ final class UserAdmin extends AbstractAdmin
             ->addIdentifier('email')
             ->addIdentifier('roles')
         ;
+    }
+
+    public function prePersist($project)
+    {
+        $this->preUpdate($project);
+    }
+
+    public function preUpdate($project)
+    {
+        $project->setBans($project->getBans());
     }
 }
