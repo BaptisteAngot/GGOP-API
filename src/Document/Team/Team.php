@@ -3,13 +3,11 @@
 
 namespace App\Document\Team;
 
-use App\Document\Team\TeamPlayer;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
  * Class Team
- * @package App\Document
+ * @package App\Document\Team
  * @MongoDB\Document(collection="Team")
  */
 class Team
