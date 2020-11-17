@@ -34,7 +34,7 @@ class SecurityController extends AbstractController
                         $responseContent = [
                           'token' => $JWTTokenManager->create($user),
                           'roles' => $user->getRoles(),
-                          'username' => $user->getUsername()
+                          'username' => $user->getPseudo()
                         ];
                         $response->setContent(json_encode($responseContent));
                         $response->setStatusCode(Response::HTTP_OK);
