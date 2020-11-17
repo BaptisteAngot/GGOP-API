@@ -20,6 +20,7 @@ class PlayerTeamFixtures extends Fixture
             $faker = Faker\Factory::create('FR-fr');
             $team = new Team();
             $team->setName($faker->name('lastName'));
+            $team->setCreatorId(rand(0,100));
             $team->setIsComplete(false);
             $team->setWinRate(rand(0,100));
 

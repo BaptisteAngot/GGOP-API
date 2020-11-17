@@ -19,6 +19,11 @@ class Team
     protected $id;
 
     /**
+     * @MongoDB\Field(type="int")
+     */
+    protected $creator_id;
+
+    /**
      * @MongoDB\Field(type="string")
      */
     protected $name;
@@ -50,6 +55,22 @@ class Team
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatorId()
+    {
+        return $this->creator_id;
+    }
+
+    /**
+     * @param mixed $creator_id
+     */
+    public function setCreatorId($creator_id): void
+    {
+        $this->creator_id = $creator_id;
     }
 
     /**
