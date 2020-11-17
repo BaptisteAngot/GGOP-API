@@ -17,6 +17,7 @@ class UserFormType extends AbstractType
             ->add('password', PasswordType::class)
             ->add('pseudo')
             ->add('riot_pseudo')
+            ->add('riot_server_id')
         ;
     }
 
