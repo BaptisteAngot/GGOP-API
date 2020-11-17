@@ -7,6 +7,7 @@ use App\Document\Team\TeamPlayer;
 use App\Form\Team\TeamFormType;
 use App\Repository\UserRepository;
 use Doctrine\ODM\MongoDB\DocumentManager;
+use Doctrine\ODM\MongoDB\MongoDBException;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -52,6 +53,7 @@ class TeamController extends AbstractController
      * @param Request $request
      * @param UserRepository $userRepository
      * @return JsonResponse
+     * @throws MongoDBException
      */
     public function createTeam(DocumentManager $documentManager, Request $request, UserRepository $userRepository) : JsonResponse
     {
@@ -71,15 +73,18 @@ class TeamController extends AbstractController
         $userCreator = $userRepository->find($datas['creator_id']);
         if (!$userCreator)
         {
-            return JsonResponse::fromJsonString('User at this id not exist : ' . $datas['creator_id'],Response::HTTP_BAD_REQUEST);
+            return JsonResponse::fromJsonString(json_encode('User at this id not exist : ' . $datas['creator_id']),Response::HTTP_BAD_REQUEST);
         }
+        $tabPlayer = [];
+        array_push($tabPlayer,$playerCreator);
         $playerCreator->setUserPseudo($userCreator->getPseudo());
-        $team->setPlayers($playerCreator);
+        $team->setCreatorId($datas['creator_id']);
+        $team->setPlayers($tabPlayer);
         $team->setWinRate(1);
         $team->setIsComplete(false);
         $documentManager->persist($team);
         $documentManager->flush();
-        return JsonResponse::fromJsonString("Team created at id: " . $team->getId(),Response::HTTP_OK);
+        return JsonResponse::fromJsonString(json_encode("Team created at id: " . $team->getId()),Response::HTTP_OK);
     }
 
     public function serializeUser($objet) {
