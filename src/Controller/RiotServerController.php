@@ -23,7 +23,7 @@ use JMS\Serializer\SerializationContext;
 class RiotServerController extends AbstractController
 {
     /**
-     * @Route("api/riotServer", name="getRiotServer",methods={"GET"})
+     * @Route("riotServer", name="getRiotServer",methods={"GET"})
      * @param RiotServerRepository $riotServerRepository
      * @param SerializerInterface $serializer
      * @return JsonResponse

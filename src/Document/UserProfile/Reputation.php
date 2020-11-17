@@ -69,9 +69,4 @@ class Reputation
     {
         $this->reports[] = $report;
     }
-
-    private function calculateRatio():float
-    {
-        count($this->honors);
-    }
 }
