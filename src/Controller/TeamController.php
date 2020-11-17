@@ -15,7 +15,7 @@ use Symfony\Component\Serializer\Serializer;
 class TeamController extends AbstractController
 {
     /**
-     * @Route("api/team", name="team", methods={"GET"})
+     * @Route("/team", name="team")
      * @param DocumentManager $documentManager
      * @return JsonResponse
      */
