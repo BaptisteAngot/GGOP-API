@@ -44,7 +44,7 @@ class UserController extends AbstractController
         $user->setPassword($password);
         $entityManager->persist($user);
         $entityManager->flush();
-        return JsonResponse::fromJsonString("User created at id: " . $user->getId(),Response::HTTP_OK);
+        return JsonResponse::fromJsonString($user->getId(),Response::HTTP_OK);
     }
 
     /**
