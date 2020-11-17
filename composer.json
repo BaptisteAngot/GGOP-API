@@ -15,6 +15,7 @@
         "fzaninotto/faker": "^1.9",
         "jms/serializer-bundle": "^3.7",
         "lexik/jwt-authentication-bundle": "^2.8",
+        "nelmio/cors-bundle": "^2.1",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.1",
         "sonata-project/admin-bundle": "^3.78",

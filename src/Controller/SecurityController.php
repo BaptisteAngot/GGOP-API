@@ -24,6 +24,7 @@ class SecurityController extends AbstractController
     public function api_login(UserRepository $userRepository,Request $request,UserPasswordEncoderInterface $encoder, JWTTokenManagerInterface $JWTTokenManager): JsonResponse
     {
         $response = new JsonResponse();
+        $response->headers->set('Access-Control-Allow-Origin', '*');
         $datas = json_decode($request->getContent(),true);
 
         if (isset($datas['email']) && isset($datas['password']) ) {
