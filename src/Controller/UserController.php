@@ -39,10 +39,6 @@ class UserController extends AbstractController
                 return JsonResponse::fromJsonString($error->getMessage(),Response::HTTP_BAD_REQUEST);
             }
         }
-        $datas = $request->getContent();
-        if ($datas['riot_server_id']) {
-            $user->setRiotServerId($datas['riot_server_id']);
-        }
         $entityManager = $this->getDoctrine()->getManager();
         $password = $passwordEncoder->encodePassword($user,$user->getPassword());
         $user->setPassword($password);
