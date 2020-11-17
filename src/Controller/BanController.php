@@ -17,15 +17,22 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use OpenApi\Annotations as OA;
+
 
 class BanController extends AbstractController
 {
 
     /**
-     * @Route("ban", name="ban",methods={"GET"})
+     * @Route("api/admin/ban", name="ban",methods={"GET"})
      * @param Request $request
      * @param BanRepository $banRepository
      * @return JsonResponse
+     * @OA\Response(
+     *     response="200",
+     *     description="Get all ban"
+     * )
+     * @OA\Tag(name="Ban")
      */
     public function getBan(Request $request,BanRepository $banRepository) {
         $filter = [];
@@ -44,6 +51,15 @@ class BanController extends AbstractController
      * @param Request $request
      * @param BanRepository $banRepository
      * @return JsonResponse
+     * @OA\Tag(name="Ban")
+     * @OA\Parameter(
+     *     name="Authorization",
+     *     in="header",
+     *     required=true,
+     *     description="Authorization",
+     *     @OA\Schema(type="string")
+     * )
+     *
      */
     public function deleteBan(Request $request,BanRepository $banRepository) {
         $entityManager = $this->getDoctrine()->getManager();
