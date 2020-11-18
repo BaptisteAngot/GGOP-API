@@ -128,11 +128,30 @@ class TeamController extends AbstractController
         }
     }
 
-    //TODO SUPPRESSION EQUIPE
+    /**
+     * @Route("api/team", name="deleteTeam", methods={"DELETE"})
+     * @param Request $request
+     * @param DocumentManager $dm
+     * @return JsonResponse
+     */
+    public function deleteTeam(Request $request, DocumentManager $dm)
+    {
+        $datas = json_decode($request->getContent(),true);
+        if (isset($datas['idTeam'])) {
+            $team = $dm->getRepository(Team::class)->find($datas['idTeam']);
+            if ($team){
+                $dm->remove($team);
+                $dm->flush();
+                return JsonResponse::fromJsonString(json_encode("Team delete successfuly."),Response::HTTP_OK);
+            }else
+                return JsonResponse::fromJsonString(json_encode("Team don't exist."),Response::HTTP_BAD_REQUEST);
+        }
+    }
+
+    //TODO SUPPRESSION UNE PERSONNE D'UNE EQUIPE
 
     /**
      * @Route("api/team/{idTeam}/{idRequest}/{value}", name="updateAddTeam", methods={"POST"})
-     * @param Request $request
      * @param $idTeam
      * @param $idRequest
      * @param $value
@@ -140,7 +159,7 @@ class TeamController extends AbstractController
      * @return JsonResponse
      * @throws MongoDBException
      */
-    public function updateAddTeam(Request $request,$idTeam,$idRequest,$value,DocumentManager $documentManager){
+    public function updateAddTeam($idTeam,$idRequest,$value,DocumentManager $documentManager){
         if (isset($idRequest) && isset($idTeam) &&  isset($value))
         {
            $requestGGOP = $documentManager->getRepository(RequestGGOP::class)->find($idRequest);
