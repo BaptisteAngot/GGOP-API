@@ -190,6 +190,7 @@ class MatchController extends AbstractController
                     $playerData->setDeaths($playerGameInfo->stats->deaths);
                     $playerData->setChampion($playerGameInfo->championId);
                     $playerData->setKill($playerGameInfo->stats->kills);
+                    $playerData->setLane($playerGameInfo->timeline->lane);
                     $playerData->setSummonerSpells([$playerGameInfo->spell1Id, $playerGameInfo->spell2Id]);
                     $playerData->setItems([$playerGameInfo->stats->item0, $playerGameInfo->stats->item1, $playerGameInfo->stats->item2, $playerGameInfo->stats->item3, $playerGameInfo->stats->item4, $playerGameInfo->stats->item5, $playerGameInfo->stats->item6]);
                     $team->addPlayer($playerData);

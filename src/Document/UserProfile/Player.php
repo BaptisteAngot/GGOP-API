@@ -22,6 +22,26 @@ class Player
 
     public $summoner_spells;
 
+    public $lane;
+
+    /**
+     * @return mixed
+     */
+    public function getLane()
+    {
+        return $this->lane;
+    }
+
+    /**
+     * @param mixed $lane
+     */
+    public function setLane($lane): void
+    {
+        $this->lane = $lane;
+    }
+
+
+
     /**
      * @return mixed
      */
