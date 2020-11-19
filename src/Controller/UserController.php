@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Document\Report\Report;
+use App\Document\UserProfile\Honor;
+use App\Document\UserProfile\Reputation;
 use App\Document\UserProfile\UserProfile;
 use App\Entity\User;
 use App\Form\User\UserFormType;
@@ -64,6 +67,26 @@ class UserController extends AbstractController
         //Création document UserProfile du player
         $userProfile = new UserProfile();
         $userProfile->setUserId($user->getId());
+        $reputation = new Reputation();
+        $reputation->setRatio(1);
+        $TYPEHONOR = ['sang-froid','super-leader','gg'];
+        //Création de 3 honors
+        for ($i = 0; $i < 3; $i++){
+            $honor = new Honor();
+            $honor->setType($TYPEHONOR[$i]);
+            $honor->setNumber(0);
+            $reputation->addHonors($honor);
+        }
+
+        $TYPEREPORT = ['feeding','discrimination','afk'];
+        for ($i = 0; $i < 3 ; $i++) {
+            $report = new \App\Document\UserProfile\Report();
+            $report->setNumber(0);
+            $report->setType($TYPEREPORT[$i]);
+            $reputation->addReports($report);
+        }
+        $userProfile->addReputation($reputation);
+
         $documentManager->persist($userProfile);
         $documentManager->flush();
 
