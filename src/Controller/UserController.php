@@ -55,7 +55,7 @@ class UserController extends AbstractController
         $violations = $validator->validate($user);
         if (0 !== count($violations)) {
             foreach ($violations as $error) {
-                return JsonResponse::fromJsonString($error->getMessage(),Response::HTTP_BAD_REQUEST);
+                return JsonResponse::fromJsonString(json_encode($error->getMessage()),Response::HTTP_BAD_REQUEST);
             }
         }
         $entityManager = $this->getDoctrine()->getManager();
@@ -90,7 +90,7 @@ class UserController extends AbstractController
         $documentManager->persist($userProfile);
         $documentManager->flush();
 
-        return JsonResponse::fromJsonString("User created at id: " . $user->getId(),Response::HTTP_OK);
+        return JsonResponse::fromJsonString(json_encode("User created at id: " . $user->getId()),Response::HTTP_OK);
     }
 
     /**
