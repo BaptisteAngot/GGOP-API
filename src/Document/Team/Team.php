@@ -16,32 +16,32 @@ class Team
     /**
      * @MongoDB\Id
      */
-    protected $id;
+    public $id;
 
     /**
      * @MongoDB\Field(type="int")
      */
-    protected $creator_id;
+    public $creator_id;
 
     /**
      * @MongoDB\Field(type="string")
      */
-    protected $name;
+    public $name;
 
     /**
      * @MongoDB\Field(type="int")
      */
-    protected $win_rate;
+    public $win_rate;
 
     /**
      * @MongoDB\Field(type="bool")
      */
-    protected $is_complete;
+    public $is_complete;
 
     /**
      * @MongoDB\Field(type="collection")
      */
-    protected $players;
+    public $players;
 
     public function __construct()
     {
