@@ -29,12 +29,10 @@ class UserController extends AbstractController
     private $baseurl = ".api.riotgames.com/lol/";
     private $endPointGetUserInfoBySummonerName = "summoner/v4/summoners/by-name/";
     private $endPointGetRankAccount = "league/v4/entries/by-summoner/";
-    private $token = "";
 
     public function __construct(HttpClientInterface $client)
     {
         $this->client = $client;
-        $this->token = $_ENV['RIOT_API_KEY'];
     }
 
     /**
@@ -95,36 +93,6 @@ class UserController extends AbstractController
         $serializer = new Serializer([$normalizer], [new JsonEncoder()]);
 
         return $serializer->serialize($objet, 'json');
-    }
-
-    private function getRankAccount($region,$summonerName) {
-        $accountId = $this->getAccountID($region,$summonerName);
-        $url = $this->https . $region .  $this->baseurl . $this->endPointGetRankAccount . $accountId;
-        $cb = $this->client->request(
-            'GET',
-            $url,
-            [
-                'headers' => [
-                    'X-Riot-Token' => $this->token
-                ]
-            ]
-        );
-        return json_decode($cb->getContent(), true);
-    }
-
-    private function getAccountID($region, $summonerName) {
-        $url = $this->https.$region. $this->baseurl.$this->endPointGetUserInfoBySummonerName.$summonerName;
-        $response = $this->client->request(
-            'GET',
-            $url,
-            [
-                'headers' => [
-                    'X-Riot-Token' => $this->token
-                ]
-            ]
-        );
-        $responseContent =json_decode($response->getContent());
-        return $responseContent->accountId;
     }
 
 }
