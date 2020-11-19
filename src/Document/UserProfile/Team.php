@@ -10,6 +10,8 @@ class Team
 
     public $players;
 
+    public $teamId;
+
     public function __construct()
     {
         $this->players = [];
@@ -32,6 +34,24 @@ class Team
     }
 
     /**
+     * @return mixed
+     */
+    public function getTeamId()
+    {
+        return $this->teamId;
+    }
+
+    /**
+     * @param mixed $teamId
+     */
+    public function setTeamId($teamId): void
+    {
+        $this->teamId = $teamId;
+    }
+
+
+
+    /**
      * @return array
      */
     public function getPlayers(): array
@@ -49,7 +69,7 @@ class Team
 
     public function addPlayer(Player $player)
     {
-
+        $this->players[] = $player;
     }
 
 }

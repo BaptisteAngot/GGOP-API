@@ -20,10 +20,6 @@ class Player
 
     public $items;
 
-    public $p_perk;
-
-    public $s_perk;
-
     public $summoner_spells;
 
     /**
@@ -136,38 +132,6 @@ class Player
     public function setItems($items): void
     {
         $this->items = $items;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPPerk()
-    {
-        return $this->p_perk;
-    }
-
-    /**
-     * @param mixed $p_perk
-     */
-    public function setPPerk($p_perk): void
-    {
-        $this->p_perk = $p_perk;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSPerk()
-    {
-        return $this->s_perk;
-    }
-
-    /**
-     * @param mixed $s_perk
-     */
-    public function setSPerk($s_perk): void
-    {
-        $this->s_perk = $s_perk;
     }
 
     /**

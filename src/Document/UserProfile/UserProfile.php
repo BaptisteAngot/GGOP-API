@@ -31,6 +31,16 @@ class UserProfile
      */
     protected $game_history;
 
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $main_champion;
+
+    /**
+     * @MongoDB\Field(type="string")
+     */
+    protected $rank;
+
     public function __construct() {
         $this->reputation = [];
         $this->game_history = [];
@@ -101,4 +111,38 @@ class UserProfile
     {
         $this->game_history[] = $game;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMainChampion()
+    {
+        return $this->main_champion;
+    }
+
+    /**
+     * @param mixed $main_champion
+     */
+    public function setMainChampion($main_champion): void
+    {
+        $this->main_champion = $main_champion;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    /**
+     * @param mixed $rank
+     */
+    public function setRank($rank): void
+    {
+        $this->rank = $rank;
+    }
+
+
 }
