@@ -90,6 +90,21 @@ class TeamController extends AbstractController
     }
 
     /**
+     * @Route("/api/team/byID/{idTeam}", methods={"GET"}, name="getTeamByIdTeam")
+     * @param $idTeam
+     * @param DocumentManager $documentManager
+     * @return JsonResponse
+     */
+    public function getTeamByIDTeam($idTeam,DocumentManager $documentManager) {
+        $team = $documentManager->getRepository(Team::class)->find($idTeam);
+        if ($team){
+            return JsonResponse::fromJsonString(json_encode($team),Response::HTTP_OK);
+        }else {
+            return JsonResponse::fromJsonString(json_encode("team don't exist"),Response::HTTP_BAD_REQUEST);
+        }
+    }
+
+    /**
      * @Route("/api/team/addPlayerToTeam",name="requestAddPlayerToTeam" ,methods={"POST"})
      * @param Request $request
      * @param DocumentManager $documentManager
