@@ -86,7 +86,7 @@ class TeamController extends AbstractController
         $team->setIsComplete(false);
         $documentManager->persist($team);
         $documentManager->flush();
-        return JsonResponse::fromJsonString(json_encode("Team created at id: " . $team->getId()),Response::HTTP_OK);
+        return JsonResponse::fromJsonString(json_encode($team->getId()),Response::HTTP_OK);
     }
 
     /**
