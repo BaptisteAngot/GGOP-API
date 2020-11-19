@@ -27,6 +27,8 @@ final class UserAdmin extends AbstractAdmin
                 'multiple' => true,
                 'mapped' => true
             ])
+            ->add('pseudo',TextType::class)
+            ->add('RiotPseudo',TextType::class)
         ;
     }
 
