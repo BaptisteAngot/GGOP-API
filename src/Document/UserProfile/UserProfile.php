@@ -14,32 +14,32 @@ class UserProfile
     /**
      * @MongoDB\Id
      */
-    protected $id;
+    public $id;
 
     /**
      * @MongoDB\Field(type="int")
      */
-    protected $user_id;
+    public $user_id;
 
     /**
      * @MongoDB\Field(type="collection")
      */
-    protected $reputation;
+    public $reputation;
 
     /**
      * @MongoDB\Field(type="collection")
      */
-    protected $game_history;
+    public $game_history;
 
     /**
      * @MongoDB\Field(type="string")
      */
-    protected $main_champion;
+    public $main_champion;
 
     /**
      * @MongoDB\Field(type="string")
      */
-    protected $rank;
+    public $rank;
 
     public function __construct() {
         $this->reputation = [];
