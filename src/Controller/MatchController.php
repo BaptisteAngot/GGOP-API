@@ -171,6 +171,7 @@ class MatchController extends AbstractController
 
         $game->setDate($date);
         $game->setResult($this->searchGameResult($matchinfo, $user->getRiotPseudo()));
+        $game->setGamemode($matchinfo->gamemode);
         foreach ($matchinfo->teams as $teamData) {
             $team = new Team();
             $team->setWin($teamData->win);

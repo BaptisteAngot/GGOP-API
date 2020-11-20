@@ -10,11 +10,31 @@ class Game
 
     public $result;
 
+    public $gamemode;
+
     public $teams;
 
     public function __construct() {
         $this->teams = [];
     }
+
+    /**
+     * @return mixed
+     */
+    public function getGamemode()
+    {
+        return $this->gamemode;
+    }
+
+    /**
+     * @param mixed $gamemode
+     */
+    public function setGamemode($gamemode): void
+    {
+        $this->gamemode = $gamemode;
+    }
+
+
 
     /**
      * @return mixed
