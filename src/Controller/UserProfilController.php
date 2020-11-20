@@ -40,6 +40,19 @@ class UserProfilController extends AbstractController
     }
 
     /**
+     * @Route("/api/userProfil/{id}", name="getAllUserProfio",methods={"DELETE"})
+     * @param DocumentManager $documentManager
+     * @return JsonResponse
+     * @throws \Doctrine\ODM\MongoDB\MongoDBException
+     */
+    public function eraseUserProfil($id,DocumentManager $documentManager){
+        $userProfil = $documentManager->getRepository(UserProfile::class)->find($id);
+        $documentManager->remove($userProfil);
+        $documentManager->flush();
+        return JsonResponse::fromJsonString(json_encode("ok"),Response::HTTP_OK);
+    }
+
+    /**
      * @Route("/api/userProfil/", name="getAllUserProfio",methods={"GET"})
      * @param DocumentManager $documentManager
      * @return JsonResponse
