@@ -40,7 +40,7 @@ class UserProfilController extends AbstractController
     }
 
     /**
-     * @Route("/api/userProfil/{id}", name="getAllUserProfio",methods={"DELETE"})
+     * @Route("/api/userProfil/{id}", name="deleteUserProfil",methods={"DELETE"})
      * @param DocumentManager $documentManager
      * @return JsonResponse
      * @throws \Doctrine\ODM\MongoDB\MongoDBException
